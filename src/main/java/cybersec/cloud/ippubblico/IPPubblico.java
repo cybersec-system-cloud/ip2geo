@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import org.apache.commons.lang3.StringUtils;
 
-@Path("/pubblico")
+@Path("/IPPubblico")
 @Produces(MediaType.APPLICATION_JSON)
 public class IPPubblico {
     
@@ -54,28 +54,28 @@ public class IPPubblico {
         // Controlla che l'IP sia privato
         if (n1 == 10) {
             return Response.ok()
-                    .entity(new IPInfo(ip,"privato"))
+                    .entity(new IPInfo(ip,"private"))
                     .type(MediaType.APPLICATION_JSON)
                     .build();
         }
         if (n1 == 172) {
             if (n2 <= 31 && n2 >= 16) {
                 return Response.ok()
-                        .entity(new IPInfo(ip,"privato"))
+                        .entity(new IPInfo(ip,"private"))
                         .type(MediaType.APPLICATION_JSON)
                         .build();
             }
         }
         if (n1 == 192 && n2 == 168) {
             return Response.ok()
-                    .entity(new IPInfo(ip,"privato"))
+                    .entity(new IPInfo(ip,"private"))
                     .type(MediaType.APPLICATION_JSON)
                     .build();
         }
         
         // Se arriva qui, l'IP è pubblico
         return Response.ok()
-                .entity(new IPInfo(ip,"pubblico"))
+                .entity(new IPInfo(ip,"public"))
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }
