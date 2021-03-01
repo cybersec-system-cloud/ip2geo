@@ -37,7 +37,7 @@ public class IP2Geo {
         parser = new JSONParser();
         // Collegamento ai servizi utilizzati
         Client c = ClientBuilder.newClient();
-        ipPubblico = c.target("http://localhost:8080/IPPubblico");
+        ipPubblico = c.target("http://localhost:8080/ipPubblico");
     }
     
     @POST

@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import org.apache.commons.lang3.StringUtils;
 
-@Path("/IPPubblico")
+@Path("/ipPubblico")
 @Produces(MediaType.APPLICATION_JSON)
 public class IPPubblico {
     
