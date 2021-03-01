@@ -4,7 +4,6 @@ import cybersec.cloud.ip2geo.IP2Geo;
 import cybersec.cloud.ip2geo.IP2GeoConfiguration;
 import cybersec.cloud.ippubblico.IPPubblico;
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
 
 public class Server extends Application<IP2GeoConfiguration> {
@@ -20,7 +19,7 @@ public class Server extends Application<IP2GeoConfiguration> {
         e.jersey().register(ipPubblico);
         
         // Registrazione del servizio IP2Geo
-        final IP2Geo ip2geo = new IP2Geo(t.getDefaultValue());
+        final IP2Geo ip2geo = new IP2Geo(t.getDefaultValue(),t.getPort());
         e.jersey().register(ip2geo);
     }
     
