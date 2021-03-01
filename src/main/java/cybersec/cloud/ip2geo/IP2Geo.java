@@ -24,10 +24,10 @@ import org.json.simple.parser.ParseException;
 @Produces(MediaType.APPLICATION_JSON)
 public class IP2Geo {
     
-    private String defaultValue;
-    private Map<String,IPGeoInfo> ips;
-    private JSONParser parser;
-    private WebTarget ipPubblico;
+    private final String defaultValue;
+    private final Map<String,IPGeoInfo> ips;
+    private final JSONParser parser;
+    private final WebTarget ipPubblico;
     
     public IP2Geo(String defaultValue) {
         this.defaultValue = defaultValue;
